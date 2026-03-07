@@ -15,9 +15,11 @@ model.eval()
 
 # Label mapping
 labels_map = {
-    0: "Negative",
-    1: "Neutral",
-    2: "Positive"
+    0: "Very Negative",
+    1: "Negative",
+    2: "Neutral",
+    3: "Positive",
+    4: "Very Positive"
 }
 
 def predict_review(review_text):
@@ -54,6 +56,8 @@ if __name__ == "__main__":
 
         print(f"\nPredicted Sentiment: {sentiment}")
         print("Confidence Scores:")
-        print(f"Negative: {confidence[0]:.4f}")
-        print(f"Neutral : {confidence[1]:.4f}")
-        print(f"Positive: {confidence[2]:.4f}")
+        print(f"Very Negative: {confidence[0]:.4f}")
+        print(f"Negative     : {confidence[1]:.4f}")
+        print(f"Neutral      : {confidence[2]:.4f}")
+        print(f"Positive     : {confidence[3]:.4f}")
+        print(f"Very Positive: {confidence[4]:.4f}")

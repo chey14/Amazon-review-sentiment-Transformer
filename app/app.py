@@ -35,9 +35,11 @@ def load_model():
 model, tokenizer = load_model()
 
 labels_map = {
-    0: "Negative",
-    1: "Neutral",
-    2: "Positive"
+    0: "Very Negative",
+    1: "Negative",
+    2: "Neutral",
+    3: "Positive",
+    4: "Very Positive"
 }
 
 # ---------------------------
@@ -88,7 +90,13 @@ if st.button("Predict Sentiment"):
         st.subheader("📊 Confidence Scores")
 
         confidence_df = pd.DataFrame({
-            "Sentiment": ["Negative", "Neutral", "Positive"],
+            "Sentiment": [
+            "Very Negative",
+            "Negative",
+            "Neutral",
+            "Positive",
+            "Very Positive"
+            ],
             "Confidence": confidence
         })
 

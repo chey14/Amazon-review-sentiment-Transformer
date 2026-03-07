@@ -3,12 +3,7 @@ import re
 
 
 def map_sentiment(rating):
-    if rating <= 2:
-        return 0
-    elif rating == 3:
-        return 1
-    else:
-        return 2
+    return rating - 1
 
 
 def clean_text(text):

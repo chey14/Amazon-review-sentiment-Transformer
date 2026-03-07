@@ -69,7 +69,7 @@ print("Using device:", device)
 
 model = BertForSequenceClassification.from_pretrained(
     "bert-base-uncased",
-    num_labels=3
+    num_labels=5
 )
 
 model.to(device)

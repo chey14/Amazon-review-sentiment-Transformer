@@ -106,7 +106,13 @@ print(classification_report(all_labels, all_preds))
 # -------------------------
 cm = confusion_matrix(all_labels, all_preds)
 
-labels_map = ["Negative", "Neutral", "Positive"]
+labels_map = [
+    "Very Negative",
+    "Negative",
+    "Neutral",
+    "Positive",
+    "Very Positive"
+]
 
 plt.figure(figsize=(6, 5))
 sns.heatmap(

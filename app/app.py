@@ -1,3 +1,24 @@
+import os
+import gdown
+import zipfile
+import streamlit as st
+
+model_folder = "models/sentiment_model"
+
+if not os.path.exists(model_folder):
+
+    with st.spinner("Downloading model... please wait"):
+
+        url = "https://drive.google.com/uc?id=1OwG4HSSGzIyKcqOtAS8HZZZbn8alTtwY"
+        output = "sentiment_model.zip"
+
+        gdown.download(url, output, quiet=False)
+
+        with zipfile.ZipFile(output, "r") as zip_ref:
+            zip_ref.extractall(".")
+
+        os.remove(output)
+
 import streamlit as st
 import torch
 import pandas as pd
